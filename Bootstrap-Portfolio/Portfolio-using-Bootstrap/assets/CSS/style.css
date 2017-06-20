@@ -74,14 +74,25 @@
   height: 190px;
 }
 
-.navbar-default {
-    background-color: #ffffff;
+.navbar-collapse {
+    padding-top:30px; 
+    padding-right: 50px;
+    padding-left: 15px;
+}
+
+ .navbar-default {
+  background-color: #ffffff;
+  height: 70px;
+  border-bottom-width: 3px;
 }
 .navbar-default .navbar-brand {
     color: #ffffff;
 }
 
 .navbar-brand{
+  position: absolute;
+  top: 26px;
+  padding: 23px;
   padding: 20px;
   margin-left: 20px;
   background: #4aaaa5;
