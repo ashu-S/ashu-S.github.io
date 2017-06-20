@@ -74,6 +74,9 @@
   height: 190px;
 }
 
+.navbar-default {
+    background-color: #ffffff;
+}
 .navbar-default .navbar-brand {
     color: #ffffff;
 }
