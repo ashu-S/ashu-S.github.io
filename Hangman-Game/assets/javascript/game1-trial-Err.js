@@ -136,11 +136,60 @@ window.onload = function () {
 
       showHangman = function() {
         console.log("creating child"); 
-        // var image = document.createElement("div");
-        // image.innerHTML = imageList[i];
-        // showImg.appendChild(imageList[i]);
-        showImg.innerHTML += imageList[i];
-        i++;
+        if (i==0)
+        {
+          var image = document.createElement("div");
+         } 
+        switch(i)
+        {
+          case 0: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 1: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 2: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 3: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 4: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 5: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 6: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 7: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+          case 8: 
+                   image.innerHTML = imageList[i];
+                    showImg.appendChild(image);
+                   i++;
+                   break;
+
+        }
+       
     }
 
   // OnClick Function
