@@ -14,7 +14,7 @@ window.onload = function () {
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
   var i=0;
-  var j=0;
+  var mute = false;               //To mute or unmute sound  
   var mySound = new sound("../Hangman-Game/assets/music/Bg-tune.mp3");
   var gameOver_tune= new sound("../Hangman-Game/assets/music/gameOver-tune.mp3");
   var applause_tune= new sound("../Hangman-Game/assets/music/applause-tune.mp3");
@@ -46,13 +46,18 @@ window.onload = function () {
 
   //mute sound function
 
-  function stopMusic()
+  stopMusic.onclick =function()
   {
-
     mySound.stop();
-    gameOver_tune.stop();
-    applause_tune.stop();
   } 
+
+  playMusic.onclick =function()
+  {
+    mySound.play();
+  } 
+
+
+
 
 
 
@@ -124,7 +129,7 @@ window.onload = function () {
       var topicIndex = topics.indexOf(chosenTopic);
       var imgIndex = chosenTopic.indexOf(word);
       showGuessImg.innerHTML = guessImages[topicIndex][imgIndex];
-      //showGuessImg.setAttribute("class","slideInDown");
+      
     }
   
   
@@ -137,9 +142,8 @@ window.onload = function () {
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "You Win!";
-        // showLives.setAttribute("class","rollin");
         applause_tune.play();
+        showLives.innerHTML = "You Win!";
         showGuessImage(); 
       }
     }
@@ -159,6 +163,7 @@ window.onload = function () {
 
 
       showHangman = function() {
+        console.log("inside showHangman");
         console.log(i);
         if(i<imageList.length)
         { 
@@ -179,10 +184,12 @@ window.onload = function () {
         } 
       }
       var j = (word.indexOf(geuss));
+      console.log(j);
       if (j === -1) {
         lives -= 1;
-        comments();
         showHangman();
+        comments();
+        
       } else {
         comments();
       }
@@ -229,7 +236,9 @@ window.onload = function () {
     showClue.innerHTML = "Clue: - " +  hints [topicIndex][hintIndex];
   };
 
-   // Reset or Play again
+  
+
+  // Reset or Play again
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
@@ -237,6 +246,7 @@ window.onload = function () {
     showClue.innerHTML = "";
     showImg.innerHTML = "";
     showGuessImg.innerHTML = "";
+    i=0;
     play();
   }
 }

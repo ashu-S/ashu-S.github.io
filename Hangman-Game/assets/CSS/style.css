@@ -6,7 +6,7 @@ header{
 .row{
   margin-left: 10px;
   margin-right: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 /*-----------------HEADER ANIMATION------------------------------------------*/
@@ -16,7 +16,6 @@ header{
     color: #fff;
     font-family: 'Monoton', cursive;
     font-size: 70px;
-    /*font-weight: bold;*/
     padding: 0 40px;
     text-align: center;
      text-decoration: underline;
@@ -83,6 +82,45 @@ header{
   animation-name: rollIn;
 }
 
+/*BOUNCE IN*/
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
+
 /*Slide Down*/
 @keyframes slideInDown {
   from {
@@ -104,7 +142,6 @@ header{
 
 body {
   background: url("../images/Bg-pattern.png");
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #fff;
   height: 100%;
   text-align: center;
@@ -158,15 +195,15 @@ p {
   float: left;
   margin: 0 10px 10px 0;
   list-style: none;
-  width: 35px;
-  height: 30px;
+  width: 38px;
+  height: 32px;
   padding-top: 10px;
   padding-bottom: 10px;
   background: #fff;
-  color: black;
+  color: red;
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #0000FF;
+  border: solid 1px white;
 }
 #alphabet li:hover {
   background: #c1d72e;
@@ -210,14 +247,14 @@ p {
 
 button {
   border-radius: 5px;
-  /*background: #808080;*/
-  background: #ADD8E6;
+  background: #808080;
   color: black ;
-  border: solid 1px #0000FF;
+  border: solid 1px white;
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2em;
   padding: 18px 10px;
+  margin-top: 30px;
   width: 180px;
   margin: 10px;
   outline: none;
@@ -242,19 +279,35 @@ button:hover {
   width: 400px;
   height: 350px;
    padding: 30px;
-  border: solid 2px #808080; 
+  border: solid 5px #808080; 
  
 }
 
-#stopMusic{
-  float: right;
+#stopMusic, #playMusic{
+  /*float: left;*/
   width: 40px;
   height:40px;
+  padding: 0;
 }
 
-#topicName, #hold, #guessesRemained,#clue{
+#deco_text,#topicName, #hold, #guessesRemained,#clue{
   padding-bottom: 10px;
+  line-height: 40px;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 25px;
+  color: white;
 }
+
+.deco_text
+{
+  margin-top: 150px;
+  padding-bottom: 10px;
+  line-height: 40px;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 25px;
+  color: white;
+}
+
 
 
 @media (max-width: 767px) {

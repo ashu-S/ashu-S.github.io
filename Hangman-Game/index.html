@@ -15,7 +15,7 @@
       <link rel="stylesheet" type="text/css" href="assets/CSS/reset.css"> 
       <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
 
-       <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
   	  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   
      
@@ -26,9 +26,7 @@
 	  <div class="wrapper">
             <!-- Hangman Logo -->
             <section class="shimmer"> Play HANGMAN 
-                     <a href="javascript;stopMusic()">
-	             	<img id="stopMusic" src="../Hangman-Game/assets/images/stopMusic1.gif">
-				</a>
+                    
 			</section>
             
       </div><!-- /.container -->
@@ -41,7 +39,10 @@
 
 		  <div class="col-md-6"> <!-- A column inside 1st Row to create the Hangman Animation area   -->
 
-		  <div id="hangman"></div>
+		  <div id="hangman" >
+		  <p class="deco_text bounceIn">   Be carefull!<br>
+		  if you loose the game, <br> Man will be hanged right Here!! <br>
+		  <span class="glyphicon glyphicon-hand-down"></span> </p> </div>
 
 
 
@@ -51,7 +52,7 @@
 
 		  <div class="col-md-6"> <!-- A column inside 1st Row to create the Play area and the Image related to a word area   -->
 		  	<div class="row">   <!-- Play area -->
-				<p> Guess the word!! </p>
+				<p id="deco_text"> Guess the word!! </p>
 
 				<p id="topicName"></p>
 
@@ -63,9 +64,16 @@
 							
 				<p id="clue"> </p>
 
+				<!-- Buttons to Stop background music  -->
+     			<div>
+				<button id="stopMusic" class="glyphicon glyphicon-volume-off"> </button>
+				<button id="playMusic" class="glyphicon glyphicon-volume-up"> 
+				</button>
+				</div>
+
 				<button id="hint">Hint</button>
      			<button id="reset"> Play again</button>
-
+     			
 					
 			</div>
 
