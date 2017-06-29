@@ -93,8 +93,8 @@ window.onload = function () {
 
       // Create hangman div
 
-    var imageList = ["<img src='../assets/images/hangman0.jpg'>",
-                     "<img src='../assets/images/hangman1.jpg'>",
+    var imageList = ["<img class='hangman-img' src='C:/Users/Ashwini/Coding_Bootcamp/ashu-S.github.io/Hangman-Game/assets/images/hangman0.jpg'>",
+                     "<img class='hangman-img' src='C:/Users/Ashwini/Coding_Bootcamp/ashu-S.github.io/Hangman-Game/assets/images/hangman1.jpg'>",
                      "<img src='../assets/images/hangman2.jpg'>",
                      "<img src='../assets/images/hangman3.jpg'>",
                      "<img src='../assets/images/hangman4.jpg'>",
@@ -105,15 +105,11 @@ window.onload = function () {
 
       showHangman = function() {
         console.log(i);
-        if (i>0)
-        {
-          console.log("removing child");
-          showImg.removeChild(image);
-        }
+       
         if (lives < 7)  
         {  
 
-         console.log("creating child"); 
+        console.log("creating child"); 
         var image = document.createElement("div");
         image.innerHTML = imageList[i];
         showImg.appendChild(image);
