@@ -14,6 +14,8 @@ window.onload = function () {
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
   var i=0;
+  var mySound = new sound("../Hangman-Game/assets/music/Bg-tune.mp3");
+  var gameOver_tune= new sound("../Hangman-Game/assets/music/gameOver-tune.mp3");
 
   // Get elements
   var showLives = document.getElementById("guessesRemained");
@@ -21,6 +23,21 @@ window.onload = function () {
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
   var showImg = document.getElementById("hangman")
+
+  function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
 
 
 
@@ -71,16 +88,33 @@ window.onload = function () {
       correct.appendChild(guess);
     }
   }
+
+  // Show the image related to the Guess word.
+
+  showGuessImg = function(){
+     guessImages = [
+        ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
+        ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+    ];
+
+    var catagoryIndex = categories.indexOf(chosenCategory);
+    var hintIndex = chosenCategory.indexOf(word);
+    showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
+
+  }
   
   // Show lives
    comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      gameOver_tune.play();
+      showGuessImg(); 
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        showGuessImg(); // Show the image related to the Guess word.
       }
     }
   }
@@ -93,34 +127,24 @@ window.onload = function () {
 
       // Create hangman div
 
-    var imageList = ["<img class='hangman-img' src='C:/Users/Ashwini/Coding_Bootcamp/ashu-S.github.io/Hangman-Game/assets/images/hangman0.jpg'>",
-                     "<img class='hangman-img' src='C:/Users/Ashwini/Coding_Bootcamp/ashu-S.github.io/Hangman-Game/assets/images/hangman1.jpg'>",
-                     "<img src='../assets/images/hangman2.jpg'>",
-                     "<img src='../assets/images/hangman3.jpg'>",
-                     "<img src='../assets/images/hangman4.jpg'>",
-                     "<img src='../assets/images/hangman5.jpg'>",
-                     "<img src='../assets/images/hangman6.jpg'>",
-                     "<img src='../assets/images/hangman7.jpg'>" ] 
+    var imageList = ["<img class='hangman-img' src='../Hangman-Game/assets/images/background.png'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman0.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman1.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman2.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman3.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman4.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman5.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman6.jpg'>",
+                     "<img class='hangman-img' src='../Hangman-Game/assets/images/hangman7.jpg'>" ] 
 
 
       showHangman = function() {
-        console.log(i);
-       
-        if (lives < 7)  
-        {  
-
         console.log("creating child"); 
         var image = document.createElement("div");
         image.innerHTML = imageList[i];
         showImg.appendChild(image);
         i++;
-      }
-   }
-
-
-
-  
-
+    }
 
   // OnClick Function
    check = function () {
@@ -163,6 +187,7 @@ window.onload = function () {
     lives = 10;
     counter = 0;
     space = 0;
+    mySound.play();
     result();
     comments();
     selectTopic();
@@ -180,9 +205,9 @@ window.onload = function () {
         ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
     ];
 
-    var catagoryIndex = categories.indexOf(chosenCategory);
-    var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
+    var topicIndex = topics.indexOf(chosenTopic);
+    var hintIndex = chosenTopic.indexOf(word);
+    showClue.innerHTML = "Clue: - " +  hints [topicIndex][hintIndex];
   };
 
    // Reset

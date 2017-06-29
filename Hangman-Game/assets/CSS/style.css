@@ -113,6 +113,7 @@ p {
   padding: 0;
   max-width: 900px;
 }
+
 #alphabet:after {
   content: "";
   display: table;
@@ -128,7 +129,7 @@ p {
   padding-top: 10px;
   padding-bottom: 10px;
   background: #fff;
-  color: #C0C0C0;
+  color: black;
   cursor: pointer;
   border-radius: 5px;
   border: solid 1px red;
