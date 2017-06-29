@@ -272,6 +272,8 @@ button:hover {
 .hangman-img{
   width: 400px;
   height: 700px;
+  padding: 30px;
+  border: solid 5px #808080; 
 }
 
 .guess-img
