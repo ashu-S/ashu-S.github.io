@@ -1,6 +1,6 @@
 
 header{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding-top: 30px;
 }
 .row{
@@ -9,21 +9,14 @@ header{
   margin-bottom: 30px;
 }
 
-
-
-
-
-
-
-
-
 /*-----------------HEADER ANIMATION------------------------------------------*/
 
 .shimmer {
        /* styling stuff */
     color: #fff;
     font-family: 'Monoton', cursive;
-    font-size: 60px;
+    font-size: 70px;
+    /*font-weight: bold;*/
     padding: 0 40px;
     text-align: center;
      text-decoration: underline;
@@ -64,6 +57,47 @@ header{
   }
 }
 
+
+
+
+
+
+
+/*SHOW GUESS IMAGE ANIMATION*/
+
+
+/*Roll IN*/
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rollIn {
+  animation-name: rollIn;
+}
+
+/*Slide Down*/
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
 
 /*-------------------CUSTOM STYLED CSS CLASSES--------------------*/
 
@@ -132,13 +166,14 @@ p {
   color: black;
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px red;
+  border: solid 1px #0000FF;
 }
 #alphabet li:hover {
   background: #c1d72e;
   border: solid 1px #fff;
   color: #fff;
 }
+
 
 #my-word {
   margin: 0;
@@ -175,9 +210,10 @@ p {
 
 button {
   border-radius: 5px;
-  background: #C0C0C0;
+  /*background: #808080;*/
+  background: #ADD8E6;
   color: black ;
-  border: solid 1px red;
+  border: solid 1px #0000FF;
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2em;
@@ -195,14 +231,29 @@ button:hover {
   color: #c1d72e;
 }
 
+
 .hangman-img{
   width: 400px;
   height: 700px;
 }
 
+.guess-img
+{
+  width: 400px;
+  height: 350px;
+   padding: 30px;
+  border: solid 2px #808080; 
+ 
+}
+
+#stopMusic{
+  float: right;
+  width: 40px;
+  height:40px;
+}
 
 #topicName, #hold, #guessesRemained,#clue{
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 

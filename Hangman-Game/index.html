@@ -25,10 +25,9 @@
 	
 	  <div class="wrapper">
             <!-- Hangman Logo -->
-            <section class="shimmer"> Play HANGMAN </section>
-            <section>
-	            <a href="javascript;stopMusic()">
-	             	<img id="stopMusic" src="../Hangman-Game/assets/images/stopMusic1.gif" width="30" height="30">
+            <section class="shimmer"> Play HANGMAN 
+                     <a href="javascript;stopMusic()">
+	             	<img id="stopMusic" src="../Hangman-Game/assets/images/stopMusic1.gif">
 				</a>
 			</section>
             
@@ -52,22 +51,16 @@
 
 		  <div class="col-md-6"> <!-- A column inside 1st Row to create the Play area and the Image related to a word area   -->
 		  	<div class="row">   <!-- Play area -->
-				<p class="decorative-txt"> Guess the word!! </p>
+				<p> Guess the word!! </p>
 
 				<p id="topicName"></p>
 
 				<p id="guessesRemained"> </p>
 
 		  		<div id="buttons"></div>   
-
-		  		
-
-
-				
-				
+  				
 				<div id="hold"></div>
-				
-				
+							
 				<p id="clue"> </p>
 
 				<button id="hint">Hint</button>
@@ -76,13 +69,9 @@
 					
 			</div>
 
-		  	<div class="row" id="border">  <!-- Image area -->
-
-		  	<p> Image!! </p>	
-
-				  	<img src="img1.jpg" id="guess-word-img">
-				  	<img src="">
-			  		
+		  	<div class="row">  <!-- Image area -->
+				<div id="showGuessImg" class="slideInDown" ></div>
+		  	
 		  	</div>
 		  	
 		  </div>
