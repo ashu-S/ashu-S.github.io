@@ -172,7 +172,7 @@ window.onload = function () {
       }
 
   // OnClick Function
-   check = function () {
+   var check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -198,7 +198,7 @@ window.onload = function () {
   
     
   // Play
-  play = function () {
+  var play = function () {
     topics = [
         ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
         ["manchester", "milan", "madrid", "amsterdam", "prague"]

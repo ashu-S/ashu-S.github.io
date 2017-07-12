@@ -1,0 +1,206 @@
+/*---------------------*/
+/* Body and background */
+/*---------------------*/
+
+body {
+  background             : url("../images/characterBackground/light.jpg");
+  -webkit-background-size: cover;
+  background-size        : cover;
+  background-position    : top center !important;
+  background-repeat      : no-repeat !important;
+  background-attachment  : fixed;
+  background-color       : black;
+  color                  : white;
+  overflow: hidden;
+}
+
+header {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px;
+}
+.characterWrapper {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+#gameMessage {
+  text-align: center;
+  font-size: 14px;
+  color: red;
+}
+#choose-enemy-button {
+  visibility: hidden;
+}
+#restart-button {
+  visibility: hidden;
+}
+#turn-counter {
+  font-size: 150%;
+}
+
+
+
+
+
+/*---------------------*/
+/* Character rendering */
+/*---------------------*/
+.character {
+  width             : 153px;
+  margin            : 0px 40px 0px 40px;
+  cursor            : pointer;
+  display           : inline-block;
+}
+.character img {
+  border            : 0 none;
+  display           : block;
+  margin-left       : auto;
+  margin-right      : auto;
+  width: auto;
+  height            : 200px;
+}
+
+
+.character img:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.character-name {
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 30px;
+  font-family: 'Itim', cursive;
+  font-size: 30px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.character-health {
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 30px;
+  font-family: 'Itim', cursive;
+  font-size: 40px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*---------------------*/
+/*      Fighting       */
+/*---------------------*/
+.attack {
+  text-align: center;
+}
+.action {
+  margin: 15px 0px;
+}
+#attack-button{
+	visibility: hidden;
+}
+.btn {
+	background: #000;
+	color: #DBD2C6;	
+}
+.enemy {
+	width: 200 px;
+	margin: 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+}
+#attacker {
+	padding: 5px;
+}
+.target-enemy {
+  background-color: black;
+  color: white;
+}
+
+/*---------------------*/
+/* Available Oponents  */
+/*---------------------*/
+#available-to-attack-section {
+  float: right;
+}
+#available-to-attack-section img {
+	height: 100px;
+}
+
+/*---------------------*/
+/*      Defender       */
+/*---------------------*/
+
+/*#defender {
+  width: 190px;
+  height: 160px;
+}*/
+#defender-name {
+  text-align: center;
+}
+#defender-image {
+  padding: 0px 16px;
+  margin: 3px 0px;
+}
+#defender-health {
+  text-align: center;
+}
+/*------------------------------------ANIMATIONS-----------------------------------------*/
+/*-------------------*/
+/* Loading Animation */
+/*-------------------*/
+@keyframes loading {
+  from {color : red;}
+  to   {color : green;}
+}
+
+/*-----------------------------*/
+/* Spin/Rotate image Animation */
+/*-----------------------------*/
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/*-----------------------------*/
+/* Shake Image/Text Animation  */
+/*-----------------------------*/
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/*---------------------*/
+/*   Media Queries     */
+/*---------------------*/
+@media only screen and (max-device-width: 768px) {
+  .character {
+    display: block;
+  height: 150px;    
+  }
+  #gameMessage {
+  font-size: 12px;
+  }
+}
+
+
